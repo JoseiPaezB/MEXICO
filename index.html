@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<body>
+  <div class="grid">
+      <section class="res">
+          <div class="grid1">
+              <h1>Costos Pasajes</h1>
+              <div id="pasajesFields">
+                <!-- Dynamic fields will be added here -->
+              </div>
+              <button onclick="addField('pasajesFields', 'Pasaje')">+ Add Pasaje</button>
+              <button id="calculatePasajes">Calculate</button>
+              <h2>Result: <span id="resultPasajes">0</span> $</h2>
+          </div>
+      </section>
+      <br/>
+      <section class="res">
+          <div class="grid1">
+            <h1>Airbnb</h1>
+            <div id="airbnbFields">
+              <!-- Dynamic fields will be added here -->
+            </div>
+            <button onclick="addField('airbnbFields', 'Costo')">+ Add Costo</button>
+            <button id="calculateAirbnb">Calculate</button>
+            <h2>Result: <span id="resultAirbnb">0</span> $</h2>
+          </div>
+      </section>
+      <br/>
+      <section class="res">
+          <div class="grid1">
+            <h1>Estadia y costos</h1>
+            <div id="estadiaFields">
+              <!-- Dynamic fields will be added here -->
+            </div>
+            <button onclick="addField('estadiaFields', 'Gasto')">+ Add Gasto</button>
+            <button id="calculateEstadia">Calculate</button>
+            <h2>Result: <span id="resultEstadia">0</span> $</h2>
+            <div class="contribution-section">
+                <h3>Contribution Percentages</h3>
+                <div id="contributionFields">
+                    <div class="contribution-container">
+                        <input type="text" id="contributor1" placeholder="Enter name" class="name-input">
+                        <input type="number" id="percentage1" placeholder="Enter percentage" min="0" max="100" class="percentage-input" onchange="updateContributions()">
+                        <span>%</span>
+                    </div>
+                    <div class="contribution-container">
+                        <input type="text" id="contributor2" placeholder="Enter name" class="name-input">
+                        <span id="percentage2" class="auto-percentage">100</span>
+                        <span>%</span>
+                    </div>
+                </div>
+                <div id="contributionSummary" class="contribution-summary">
+                    <!-- Contribution calculations will appear here -->
+                </div>
+            </div>
+          </div>
+      </section>
+      <br/>
+      <section class="res summary-section">
+          <div class="grid1">
+            <h1>Summary</h1>
+            <div class="summary-item">
+                <strong>Pasajes Total:</strong> 
+                <span id="summaryPasajes">No entries yet</span>
+            </div>
+            <div class="summary-item">
+                <strong>Airbnb Total:</strong> 
+                <span id="summaryAirbnb">No entries yet</span>
+            </div>
+            <div class="summary-item">
+                <strong>Estadia Total:</strong> 
+                <span id="summaryEstadia">No entries yet</span>
+            </div>
+            <div class="summary-item total">
+                <strong>Grand Total:</strong> 
+                <span id="grandTotal">0</span> $
+            </div>
+            <div id="totalsByName" class="totals-by-name-section"></div>
+
+          </div>
+          
+        
+        
+      </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
